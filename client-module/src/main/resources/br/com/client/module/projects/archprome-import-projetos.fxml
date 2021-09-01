@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity"
+	minHeight="-Infinity" minWidth="-Infinity"  xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+	<center>
+		<ScrollPane layoutY="50.0" prefHeight="200.0" prefWidth="200.0"
+			BorderPane.alignment="CENTER">
+			<content>
+				<VBox>
+					<children>
+						<ProgressIndicator fx:id="loading" visible="false" prefHeight="20.0"/>
+						<TableView fx:id="candidatesTable" editable="true">
+							<columns>
+								<TableColumn fx:id="addCandidateColumn" prefWidth="${loading.width * 0.1}" text="Adicionar" />
+								<TableColumn fx:id="classColumn" prefWidth="${loading.width * 0.15}" text="Classe" />
+								<TableColumn fx:id="patternColumn" prefWidth="${loading.width * 0.15}" text="Padrão" />
+								<TableColumn fx:id="maintainabilityColumn" prefWidth="${loading.width * 0.15}" text="Manutenibilidade" />
+								<TableColumn fx:id="reliabilityColumn" prefWidth="${loading.width * 0.15}" text="Confiabilidade" />
+								<TableColumn fx:id="reusabilityColumn" prefWidth="${loading.width * 0.15}" text="Reusabilidade" />
+							</columns>
+						</TableView>
+					</children>
+				</VBox>
+			</content>
+		</ScrollPane>
+	</center>
+	<top>
+		<MenuBar BorderPane.alignment="CENTER">
+			<menus>
+				<Menu mnemonicParsing="false" text="Projetos">
+					<items>
+						<MenuItem fx:id="importProjectBtn" mnemonicParsing="false"
+							text="Importar" />
+					</items>
+				</Menu>
+				<Menu mnemonicParsing="false" text="Candidatos">
+					<items>
+						<MenuItem fx:id="applyCandidadesBtn" mnemonicParsing="false"
+							text="Applicar Selecionados" />
+					</items>
+				</Menu>
+				<Menu mnemonicParsing="false" text="Opções">
+					<items>
+						<MenuItem fx:id="cleanCandidatesBtn" mnemonicParsing="false"
+							text="Limpar" />
+					</items>
+				</Menu>
+			</menus>
+		</MenuBar>
+	</top>
+</BorderPane>
